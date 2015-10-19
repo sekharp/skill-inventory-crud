@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="/application.css">
+  <title>Skill Inventory</title>
+</head>
+<body>
+  <h1>My Skills</h1>
+  <h3 id = "120id">120: <a class="container" href="/skills/120">1 title</a></h3>
+  <a href = "/skills/120">View Details</a><br />
+  <a href = "/skills/120/edit">Edit</a>
+  <form action="/skills/120" method="POST">
+    <input type="hidden" name="_method" value="DELETE">
+    <input type="submit" value="Delete"/>
+  </form>
+
+</body>
+</html>

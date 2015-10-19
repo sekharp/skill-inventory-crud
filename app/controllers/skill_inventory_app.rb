@@ -1,9 +1,4 @@
-require_relative '../models/skill_inventory'
-
 class SkillInventoryApp < Sinatra::Base
-  set :root, File.join(File.dirname(__FILE__), '..')
-  set :method_override, true
-
   get '/' do
     erb :dashboard
   end
@@ -34,12 +29,16 @@ class SkillInventoryApp < Sinatra::Base
 
   put '/skills/:id' do |id|
     SkillInventory.update(id.to_i, params[:skill])
-    redirect '/skills'
+    redirect "/skills/#{id}"
   end
 
   delete '/skills/:id' do |id|
     SkillInventory.delete(id.to_i)
     redirect '/skills'
+  end
+
+  not_found do
+    erb :error
   end
 
 end

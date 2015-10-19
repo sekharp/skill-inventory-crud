@@ -1,7 +1,5 @@
 require 'rake/testtask'
-require 'bundler'
-Bundler.require
 
-task :test do
-  Dir.glob('./test/**/*_test.rb') { |file| require file }
+Rake::TestTask.new do |t|
+  t.test_files = FileList['test/**/*_test.rb']
 end

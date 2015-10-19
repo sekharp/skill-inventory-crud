@@ -1,10 +1,10 @@
 <h1>My Skills</h1>
+
 <% @skills.each do |skill| %>
-  <h3 id = "<%= skill.id %>id"><%= skill.id %>: <a class="container" href="/skills/<%= skill.id %>"><%= skill.title %></a></h3>
-  <a href = "/skills/<%= skill.id %>">View Details</a><br />
-  <a href = "/skills/<%= skill.id %>/edit">Edit</a>
+  <h3><%= skill.id %>: <a href="/skills/<%= skill.id %>"><%= skill.title %></a></h3>
+  <a href = "/skills/<%= skill.id %>/edit" id="edit-button">Edit</a>
   <form action="/skills/<%= skill.id %>" method="POST">
     <input type="hidden" name="_method" value="DELETE">
-    <input type="submit" value="Delete"/>
+    <input type="submit" value="delete"/>
   </form>
 <% end %>
